@@ -10,6 +10,9 @@ setBackground(141, 183, 255)
 loadSprite("sun", "/assets/sun.png")
 loadSound("bell", "/assets/bell.mp3")
 
+// make level
+
+
 // init player
 const player = add([
     sprite("sun"),
