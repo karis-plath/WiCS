@@ -3,3 +3,57 @@ Resources here:
 Kaboom: https://github.com/replit/kaboom
         https://kaboomjs.com
 
+Level creation:
+
+const level = addLevel([
+	// Design the level layout with symbols
+	"      ^         ",
+    "  @        $$   ",
+	"  ============  ",
+    "                ",
+    "                ",
+    "                ",
+    "                ",
+    "################",
+], {
+	// The size of each grid
+	tileWidth: 45,
+	tileHeight: 45,
+	// The position of the top left block
+	pos: vec2(500, 500),
+	// Define what each symbol means (in components)
+	tiles: {
+		"@": () => [
+			sprite("sun"),
+			area(),
+			body(),
+			anchor("bot"),
+			"player",
+		],
+		"=": () => [
+			sprite("cloudBLK"),
+			area(),
+			body({ isStatic: true }),
+			anchor("bot"),
+		],
+		"$": () => [
+			sprite("coin"),
+			area(),
+			anchor("bot"),
+			"coin",
+		],
+		"^": () => [
+			sprite("cloud"),
+			area(),
+			anchor("bot"),
+			"danger",
+		],
+        "#": () => [
+			rect(32, 32),
+            color(141, 183, 255),
+			area(),
+			anchor("bot"),
+			"danger",
+		],
+	},
+})
